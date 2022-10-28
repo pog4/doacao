@@ -15,7 +15,12 @@ return new class extends Migration
     {
         Schema::create('animals', function (Blueprint $table) {
             $table->id();
-            $table->timestamps();
+            $table->string('nome',100);
+            $table->string('esp_id');
+            $table->string('raca',100);
+            $table->string('historico');
+            $table->string('caracteristicas');
+            //$table->timestamps();
         });
     }
 

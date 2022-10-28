@@ -19,11 +19,16 @@
         </div>
     @endif
     <br />
-    {{Form::open(['route' => ['animals.update',$animal->id], 'method' => 'PUT','enctype'=>'multipart/form-data'])}}
+    {{Form::open(['route' => ['animal.update',$animal->id], 'method' => 'PUT','enctype'=>'multipart/form-data'])}}
         {{Form::label('nome', 'Nome')}}
         {{Form::text('nome',$animal->nome,['class'=>'form-control','required','placeholder'=>'Nome completo'])}}
-        {{Form::label('especie', 'Espécie')}}
-        {{Form::text('especie',$animal->especie,['class'=>'form-control','required','placeholder'=>'Nome da espécie'])}}
+        {{Form::label('id_esp', 'Espécie')}}
+        {{Form::text('id_esp','',['class'=>'form-control','required','placeholder'=>'Selecione uma Espécie','list'=>'listespecies'])}}
+        <datalist id='listespecies'>
+            @foreach($especies as $especie)
+                <option value="{{$especie->id}}">{{$especie->nome}}</option>
+            @endforeach
+        </datalist>
         {{Form::label('raca', 'raça')}}
         {{Form::text('raca',$animal->raca,['class'=>'form-control','required','placeholder'=>'Nome da raça'])}}
         {{Form::label('historico', 'Histórico')}}
@@ -34,6 +39,6 @@
         {{Form::file('foto',['class'=>'form-control','id'=>'foto'])}}
         <br />
         {{Form::submit('Salvar',['class'=>'btn btn-success'])}}
-        <a href="{{url('animals')}}" class="btn btn-secondary">Voltar</a>
+        <a href="{{url('animal')}}" class="btn btn-secondary">Voltar</a>
     {{Form::close()}}
 @endsection

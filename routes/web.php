@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AnimalController;
+use App\Http\Controllers\EspeciesController;
 
 /*
 |--------------------------------------------------------------------------
@@ -20,4 +21,8 @@ Route::get('/', function () {
 
 //Route::get('/', [App\Http\Controllers\HomeController::class, 'index']);
 
+Route::get('animals/buscar',[AnimalController::class,'buscar']);
 Route::resource('animal',AnimalController::class);
+
+Route::get('especies/buscar',[EspeciesController::class,'buscar']);
+Route::resource('especie',EspeciesController::class);

@@ -5,13 +5,11 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Animal extends Model
+class Especies extends Model
 {
     use HasFactory;
-    
-    
-    public function especie() {
-        return $this->belongsTo(Especies::class);
-    }
 
+    public function animal() {
+        return $this->hasMany(Animal::class);
+    }
 }

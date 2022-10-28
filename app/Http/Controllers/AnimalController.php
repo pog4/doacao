@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Animal;
+use App\Models\Especies;
 use Session;
 
 class AnimalController extends Controller
@@ -25,10 +26,11 @@ class AnimalController extends Controller
      * @return \Illuminate\Http\Response
      */
     
-    /* public function buscar(Request $request) {
-        $animals = Animal::where('nome','LIKE','%'.$request->input('busca').'%')->orwhere('especie','LIKE','%'.$request->input('busca').'%')->get();
-        return view('animal.index',array('animals' => $animals,'busca'=>$request->input('busca')));
-    }*/
+    public function buscar(Request $request) {
+    $animals = Animal::where('nome','LIKE','%'.$request->input('busca').'%')->orwhere('especie','LIKE','%'.$request->input('busca').'%')->get();
+     return view('animal.index',array('animals' => $animals,'busca'=>$request->input('busca')));
+    }
+    
 
 
     /**
@@ -38,7 +40,8 @@ class AnimalController extends Controller
      */
     public function create()
     {
-        return view('animal.create');
+        $especies = Especies::all();
+        return view('animal.create',['especies'=>$especies]);
     }
 
     /**
@@ -51,14 +54,14 @@ class AnimalController extends Controller
     {
         $this->validate($request,[
             'nome' => 'required',
-            'especie' => 'required',
+            'id_esp' => 'required',
             'raca' => 'required',
             'historico' => 'required',
             'caracteristicas' => 'required',
         ]);
         $animal = new Animal();
         $animal->nome = $request->input('nome');
-        $animal->especie = $request->input('especie');
+        $animal->id_esp = $request->input('id_esp');
         $animal->raca = $request->input('raca');
         $animal->historico = $request->input('historico');
         $animal->caracteristicas = $request->input('caracteristicas');
@@ -76,7 +79,8 @@ class AnimalController extends Controller
     public function show($id)
     {
         $animal = Animal::find($id);
-        return view('animal.show',array('animal' => $animal));
+        $especies = Especies::all();
+        return view('animal.show',['especies'=>$especies,'animal' => $animal]);
     }
 
     /**
@@ -88,7 +92,8 @@ class AnimalController extends Controller
     public function edit($id)
     {
         $animal = Animal::find($id);
-        return view('animal.edit',array('animal' => $animal));
+        $especies = Especies::all();
+        return view('animal.edit',['especies'=>$especies,'animal' => $animal]);
     }
 
     /**
@@ -102,8 +107,8 @@ class AnimalController extends Controller
     {
 
         $this->validate($request,[
-            'nome' => 'required|min:3]',
-            'especie' => 'required|e-mail|min:3',
+            'nome' => 'required',
+            'id_esp' => 'required',
             'raca' => 'required',
             'historico' => 'required',
             'caracteristicas' => 'required',
@@ -111,7 +116,7 @@ class AnimalController extends Controller
 
         $animal = Animal::find($id);
         $animal->nome = $request->input('nome');
-        $animal->especie = $request->input('especie');
+        $animal->id_esp = $request->input('id_esp');
         $animal->raca = $request->input('raca');
         $animal->historico = $request->input('historico');
         $animal->caracteristicas = $request->input('caracteristicas');

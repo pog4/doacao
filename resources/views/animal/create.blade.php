@@ -9,16 +9,21 @@
                     <li>
                         {{$error}}
                     </li>
-                @endforeach
+                @endforeach 
             </ul>
         </div>
     @endif
     <br />
-    {{Form::open(['route' => 'contatos.store', 'method' => 'POST','enctype'=>'multipart/form-data'])}}
+    {{Form::open(['route' => 'animal.store', 'method' => 'POST','enctype'=>'multipart/form-data'])}}
     {{Form::label('nome', 'Nome')}}
-        {{Form::text('nome','',['class'=>'form-control','required','placeholder'=>'Nome completo'])}}
-        {{Form::label('especie', 'Espécie')}}
-        {{Form::text('especie','',['class'=>'form-control','required','placeholder'=>'Nome da espécie'])}}
+        {{Form::text('nome','',['class'=>'form-control','required','placeholder'=>'Nome cachorro'])}}
+        {{Form::label('id_esp', 'Espécie')}}
+        {{Form::text('id_esp','',['class'=>'form-control','required','placeholder'=>'Selecione uma Espécie','list'=>'listespecies'])}}
+        <datalist id='listespecies'>
+            @foreach($especies as $especie)
+                <option value="{{$especie->id}}">{{$especie->nome}}</option>
+            @endforeach
+        </datalist>
         {{Form::label('raca', 'raça')}}
         {{Form::text('raca','',['class'=>'form-control','required','placeholder'=>'Nome da raça'])}}
         {{Form::label('historico', 'Histórico')}}
