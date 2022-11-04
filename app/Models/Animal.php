@@ -11,7 +11,7 @@ class Animal extends Model
     
     
     public function especie() {
-        return $this->belongsTo(Especies::class);
+        return $this->belongsTo(Especies::class,'id_esp','id');
     }
 
 }

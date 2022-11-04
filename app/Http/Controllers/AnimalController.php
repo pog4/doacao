@@ -66,7 +66,7 @@ class AnimalController extends Controller
         $animal->historico = $request->input('historico');
         $animal->caracteristicas = $request->input('caracteristicas');
         if($animal->save()) {
-            return redirect('animals');
+            return redirect('animal');
         }
     }
 
@@ -79,8 +79,7 @@ class AnimalController extends Controller
     public function show($id)
     {
         $animal = Animal::find($id);
-        $especies = Especies::all();
-        return view('animal.show',['especies'=>$especies,'animal' => $animal]);
+        return view('animal.show',['animal' => $animal]);
     }
 
     /**

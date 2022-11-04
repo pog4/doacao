@@ -58,7 +58,7 @@ class EspeciesController extends Controller
         $especie->nome = $request->input('nome');
         $especie->nome_cientifico = $request->input('nome_cientifico');
         if($especie->save()) {
-            return redirect('especies');
+            return redirect('especie');
         }
     }
 
@@ -105,7 +105,7 @@ class EspeciesController extends Controller
         $especie->nome = $request->input('nome');
         $especie->nome_cientifico = $request->input('nome_cientifico');
         if($especie->save()) {
-            Session::flash('mensagem','especie alterado com sucesso');
+            Session::flash('mensagem','Espécie alterada com sucesso');
             return redirect()->back();
         }
     }
@@ -120,7 +120,7 @@ class EspeciesController extends Controller
     {
         $especie = Especies::find($id);
         $especie->delete();
-        Session::flash('mensagem','especie Excluído com Sucesso');
-        return redirect(url('especies/'));
+        Session::flash('mensagem','Espécie excluída com Sucesso');
+        return redirect(url('especie/'));
     }
 }

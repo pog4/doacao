@@ -1,5 +1,5 @@
 @extends('home')
-@section('title','Pets - {{$animal->nome}}')
+@section('title','Pet - {{$animal->nome}}')
 @section('content')
 <div class="card w-50 m-auto">
         @php
@@ -20,14 +20,18 @@
             //echo $nomeimagem;
         @endphp
 
+        {{Html::image(asset($nomeimagem),'Foto de '.$animal->nome,["class"=>"img-thumbnail"])}}
+
         <div class="card-header">
             <h1>Doação - {{$animal->nome}}</h1>
         </div>
         <div class="card-body">
                 <h3 class="card-title">ID: {{$animal->id}}</h3>
                 Nome: {{$animal->nome}}<br/>
-                Espécie: {{$animal->id_esp}} - {{$animal->especies->nome}}<br/>
-                Raça: {{$animal->raca}}</p>
+                Espécie: {{$animal->id_esp}} - {{$animal->especie->nome}}<br/>
+                Raça: {{$animal->raca}}
+                Histórico: {{$animal->historico}}
+                Características: {{$animal->caracteristicas}}</p>
         </div>
         <div class="card-footer">
             
