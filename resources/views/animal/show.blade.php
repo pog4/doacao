@@ -1,5 +1,5 @@
 @extends('home')
-@section('title','Pet - {{$animal->nome}}')
+@section('title','Pet - '.$animal->nome)
 @section('content')
 <div class="card w-50 m-auto">
         @php
@@ -29,8 +29,8 @@
                 <h3 class="card-title">ID: {{$animal->id}}</h3>
                 Nome: {{$animal->nome}}<br/>
                 Espécie: {{$animal->id_esp}} - {{$animal->especie->nome}}<br/>
-                Raça: {{$animal->raca}}
-                Histórico: {{$animal->historico}}
+                Raça: {{$animal->raca}}<br/>
+                Histórico: {{$animal->historico}}<br/>
                 Características: {{$animal->caracteristicas}}</p>
         </div>
         <div class="card-footer">

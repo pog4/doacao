@@ -1,5 +1,5 @@
 @extends('home')
-@section('title','Espécies - {{$especie->nome}}')
+@section('title','Espécies - '.{{$especie->nome}})
 @section('content')
 <div class="card w-50 m-auto">
         @php

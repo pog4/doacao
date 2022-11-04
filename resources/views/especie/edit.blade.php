@@ -1,5 +1,5 @@
 @extends('home')
-@section('title','Alteração Espécie {{$especie->nome}}')
+@section('title','Alteração Espécie'.$especie->nome}})
 @section('content')
     <h1>Alteração Espécie {{$especie->nome}}</h1>
     @if(count($errors) > 0)

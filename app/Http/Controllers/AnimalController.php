@@ -136,6 +136,6 @@ class AnimalController extends Controller
         $animal = Animal::find($id);
         $animal->delete();
         Session::flash('mensagem','animal Excluído com Sucesso');
-        return redirect(url('animals/'));
+        return redirect(url('animal/'));
     }
 }
