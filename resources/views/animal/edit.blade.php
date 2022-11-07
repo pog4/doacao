@@ -1,4 +1,4 @@
-@extends('home')
+@extends('layouts.app')
 @section('title','Alteração Animal '.$animal->nome)
 @section('content')
     <h1>Alteração Animal {{$animal->nome}}</h1>

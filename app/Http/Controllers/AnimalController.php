@@ -66,6 +66,11 @@ class AnimalController extends Controller
         $animal->historico = $request->input('historico');
         $animal->caracteristicas = $request->input('caracteristicas');
         if($animal->save()) {
+            if($request->hasFile('foto')){
+                $imagem = $request->file('foto');
+                $nomearquivo = md5($animal->id).".".$imagem->getClientOriginalExtension();
+                $request->file('foto')->move(public_path('.\img\animals'),$nomearquivo);
+            }
             return redirect('animal');
         }
     }
@@ -112,6 +117,13 @@ class AnimalController extends Controller
             'historico' => 'required',
             'caracteristicas' => 'required',
         ]);
+
+        $animal = Animal::find($id);
+            if($request->hasFile('foto')){
+                $imagem = $request->file('foto');
+                $nomearquivo = md5($animal->id).".".$imagem->getClientOriginalExtension();
+                $request->file('foto')->move(public_path('.\img\animals'),$nomearquivo);
+            }
 
         $animal = Animal::find($id);
         $animal->nome = $request->input('nome');

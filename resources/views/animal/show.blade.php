@@ -1,4 +1,4 @@
-@extends('home')
+@extends('layouts.app')
 @section('title','Pet - '.$animal->nome)
 @section('content')
 <div class="card w-50 m-auto">

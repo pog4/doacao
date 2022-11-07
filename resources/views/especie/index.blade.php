@@ -1,4 +1,4 @@
-@extends('home')
+@extends('layouts.app')
 @section('title','Listagem de Especies')
 @section('content')
     <h1>Listagem de Especies</h1>
