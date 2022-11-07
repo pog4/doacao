@@ -16,7 +16,7 @@
     <br />
     {{Form::open(['route' => 'animal.store', 'method' => 'POST','enctype'=>'multipart/form-data'])}}
     {{Form::label('nome', 'Nome')}}
-        {{Form::text('nome','',['class'=>'form-control','required','placeholder'=>'Nome cachorro'])}}
+        {{Form::text('nome','',['class'=>'form-control','required','placeholder'=>'Nome Animal'])}}
         {{Form::label('id_esp', 'Espécie')}}
         {{Form::text('id_esp','',['class'=>'form-control','required','placeholder'=>'Selecione uma Espécie','list'=>'listespecies'])}}
         <datalist id='listespecies'>
