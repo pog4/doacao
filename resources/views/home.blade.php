@@ -3,9 +3,9 @@
 @section('content')
  <br> <br> <br> <br>
     <div class="row justify-content-center">
-        <h1 class="text-success">⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀DOACÃO</h1>
+        <h1 class="text-success text-center">DOACÃO</h1>
         <div class="col-md-11 bg-secondary text-light">
-            <div class="fluid px-3 my-2 h4">{{ __('Dashboard') }}</div>
+            <div class="fluid px-3 my-2 h4 text-center">{{ __('Painel de controle') }}</div>
             <div class="row text-center h5">
                 <div class="col m-3 bg-success text-black">
                     <div class="card-header p-2">Animais abrigados</div>

@@ -120,7 +120,7 @@ class EspeciesController extends Controller
     {
         $especie = Especies::find($id);
         $especie->delete();
-        Session::flash('mensagem','Espécie excluída com Sucesso');
+        Session::flash('mensagem','Espécie Extinguida com Sucesso');
         return redirect(url('especie/'));
     }
 }
