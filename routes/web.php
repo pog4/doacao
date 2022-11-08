@@ -25,3 +25,7 @@ Route::get('especies/buscar',[EspeciesController::class,'buscar']);
 Route::resource('especie',EspeciesController::class);
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+Route::get('/sobre', function () {
+    return view('sobre');
+});

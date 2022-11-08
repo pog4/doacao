@@ -86,7 +86,6 @@ class AnimalController extends Controller
         $animal = Animal::find($id);
         return view('animal.show',['animal' => $animal]);
     }
-
     /**
      * Show the form for editing the specified resource.
      *
@@ -147,7 +146,8 @@ class AnimalController extends Controller
     {
         $animal = Animal::find($id);
         $animal->delete();
-        Session::flash('mensagem','animal Excluído com Sucesso');
+        Session::flash('mensagem','animal ELIMINADO com Sucesso');
         return redirect(url('animal/'));
     }
+
 }
