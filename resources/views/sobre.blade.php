@@ -10,9 +10,13 @@
     <br> <br>
     Então Marco Junior fundou a Doacão em 2019. 
 </h5>
+<h6>
 <br>
 <br>
- 
+ Horário de atendimento: Sábados das 14:00 as 20:00.
+<br>
+<br>
 Contato: (47) 1234-5678 <br>
 E-mail: <a href="mailto:doacao.pet@gmail.com?subject=Hello%20again">doacao.pet@gmail.com</a>
+</h6>
 @endsection

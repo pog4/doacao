@@ -3,6 +3,7 @@
 @section('content')
  <br> <br> <br> <br>
     <div class="row justify-content-center">
+        <h1 class="text-success">⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀DOACÃO</h1>
         <div class="col-md-11 bg-secondary text-light">
             <div class="fluid px-3 my-2 h4">{{ __('Dashboard') }}</div>
             <div class="row text-center h5">
@@ -19,7 +20,7 @@
                     </div>
                 </div>
             </div>
-            
+
         </div>
     </div>
 @endsection
