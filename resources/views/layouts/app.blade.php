@@ -18,6 +18,7 @@
               <a class="nav-link active" aria-current="page" href="/home">Home</a>
               <a class="nav-link" href="/animal">Animais</a>
               <a class="nav-link" href="/especie">Espécie</a>
+              <a class="nav-link" href="/visitacao">Visitação</a>
               <a class="nav-link" href="/sobre">Sobre nós</a>
             </div>
           </div>

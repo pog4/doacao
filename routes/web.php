@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AnimalController;
 use App\Http\Controllers\EspeciesController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\VisitacaoController;
 
 /*
 |--------------------------------------------------------------------------
@@ -29,3 +30,6 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 Route::get('/sobre', function () {
     return view('sobre');
 });
+
+Route::get('visitacaos/buscar',[VisitacaoController::class,'buscar']);
+Route::resource('visitacao',VisitacaoController::class);
