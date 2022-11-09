@@ -27,11 +27,26 @@
         </div>
         <div class="card-body">
                 <h3 class="card-title">ID: {{$animal->id}}</h3>
-                Nome: {{$animal->nome}}<br/>
-                Espécie: {{$animal->id_esp}} - {{$animal->especie->nome}}<br/>
-                Raça: {{$animal->raca}}<br/>
-                Histórico: {{$animal->historico}}<br/>
-                Características: {{$animal->caracteristicas}}</p>
+                <table class="table table-light table-striped">
+                    <thead>
+                        <tr>
+                        <th scope="col">Nome</th>
+                        <th scope="col">Espécie</th>
+                        <th scope="col">Raça</th>
+                        <th scope="col">Histórico</th>
+                        <th scope="col">Características</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                        <td>{{$animal->nome}}</td>
+                        <td>{{$animal->id_esp}} - {{$animal->especie->nome}}</td>
+                        <td>{{$animal->raca}}</td>
+                        <td>{{$animal->historico}}</td>
+                        <td>{{$animal->caracteristicas}}</td>
+                        </tr>
+                    </tbody>
+                </table>
         </div>
         <div class="card-footer">
             
@@ -47,5 +62,4 @@
 
     </div>
     </div>
-
 @endsection
