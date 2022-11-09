@@ -26,7 +26,7 @@
         <div class="card-body">
                 <h3 class="card-title">ID: {{$especie->id}}</h3>
                 Nome: {{$especie->nome}}<br/>
-                Nome_científico: {{$especie->nome_cientifico}}</p>
+                Nome científico: {{$especie->nome_cientifico}}</p>
         </div>
         <div class="card-footer">
             
