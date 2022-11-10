@@ -15,7 +15,7 @@
             } elseif (file_exists("./img/animals/".md5($animal->id).".jpeg")) {
                 $nomeimagem = "./img/animals/".md5($animal->id).".jpeg";
             } else {
-                $nomeimagem = "./img/animals/semfoto.webp";
+                $nomeimagem = "./img/animals/semfoto.jpg";
             }
             //echo $nomeimagem;
         @endphp
@@ -51,7 +51,7 @@
         <div class="card-footer">
             
             {{Form::open(['route' => ['animal.destroy',$animal->id],'method' => 'DELETE'])}}
-            @if ($nomeimagem !== "./img/animals/semfoto.webp")
+            @if ($nomeimagem !== "./img/animals/semfoto.jpg")
             {{Form::hidden('foto',$nomeimagem)}}
             @endif
             <a href="{{url('animal/'.$animal->id.'/edit')}}" class="btn btn-success">Alterar</a>
